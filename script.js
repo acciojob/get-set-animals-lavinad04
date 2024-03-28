@@ -1,14 +1,14 @@
-//complete this code
 class Animal {
 	constructor(species){
-		this.species = species;
+		this._species = species; // Use a different name for the property to avoid conflicts with the getter
 	}
-		get species(){
-			return this.species;
-		}
-		makeSound(){
-			console.log(this.species);
-		
+
+	get species(){
+		return this._species;
+	}
+
+	makeSound(){
+		console.log(`The ${this.species} makes a sound`);
 	}
 }
 
@@ -24,13 +24,13 @@ class Cat extends Animal {
 	}
 }
 
-// const myCat = new Cat("Siamese");
-// myCat.makeSound(); // Output: The Siamese makes a sound
-// myCat.purr(); // Output: purr
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // Output: The Siamese makes a sound
+myCat.purr(); // Output: purr
 
-// const myDog = new Dog("Golden Retriever");
-// myDog.makeSound(); // Output: The Golden Retriever makes a sound
-// myDog.bark(); // Output: woof
+const myDog = new Dog("Golden Retriever");
+myDog.makeSound(); // Output: The Golden Retriever makes a sound
+myDog.bark(); // Output: woof
 
 // Do not change the code below this line
 window.Animal = Animal;
